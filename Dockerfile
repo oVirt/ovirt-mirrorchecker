@@ -12,7 +12,7 @@ LABEL io.k8s.description="ovirt-mirrorchecker" \
     io.openshift.tags="builder,mirrorchecker" \
     io.openshift.s2i.scripts-url="image:///usr/libexec/s2i/"
 
-RUN dnf install -y libffi-devel redhat-rpm-config gcc python3-devel openssl-devel openssl-libs openssh-clients git tar sed
+RUN dnf install -y libffi-devel redhat-rpm-config gcc python3-devel openssl-devel openssl-libs openssh-clients git tar sed && dnf clean all
 RUN pip3 install git+http://github.com/nvgoldin/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external
 RUN mkdir -p /mirrorchecker
 

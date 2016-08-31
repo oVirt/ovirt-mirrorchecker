@@ -20,4 +20,3 @@ COPY ["s2i/configs/mirrors.yaml", "/mirrorchecker/"]
 COPY ["s2i/configs/mirrors.txt", "/mirrorchecker/"]
 
 ENV SSH_SECRET_KEY none
-CMD ["/usr/libexec/s2i/usage"]

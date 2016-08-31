@@ -2,7 +2,7 @@
 # Dockerfile for ovirt-mirrorchecker
 ############################################################
 
-FROM fedora:24
+FROM fedora
 
 MAINTAINER Nadav Goldin
 

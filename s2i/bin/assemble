@@ -1,0 +1,5 @@
+#!/bin/bash -ex
+echo $PWD
+pushd /mirrorchecker
+echo "$SSH_SECRET_KEY" > /mirrorchecker/id_rsa
+cat /mirrorchecker/mirrors.yaml

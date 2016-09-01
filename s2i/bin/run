@@ -1,2 +1,0 @@
-#!/bin/bash -ex
-mirror_checker.py --config_file /mirrorchecker/mirrors.yaml

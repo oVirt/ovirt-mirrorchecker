@@ -1,5 +1,0 @@
-#!/bin/bash -ex
-echo $PWD
-echo "$SSH_SECRET_KEY" > /mirrorchecker/id_rsa
-pip install git+http://github.com/nvgoldin/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external
-cat /mirrorchecker/mirrors.yaml

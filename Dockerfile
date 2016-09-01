@@ -8,7 +8,7 @@ MAINTAINER Nadav Goldin
 LABEL io.k8s.description="ovirt-mirrorchecker" \
     io.k8s.display-name="ovirt-mirrorchecker" \
     io.openshift.expose-services="8080:http" \
-    io.openshift.tags="builder,mirrorchecker" \
+    io.openshift.tags="builder,mirrorchecker" 
 
 USER root
 RUN ["adduser", "mirrorchecker"]

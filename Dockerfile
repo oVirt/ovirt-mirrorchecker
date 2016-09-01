@@ -9,7 +9,6 @@ LABEL io.k8s.description="ovirt-mirrorchecker" \
     io.k8s.display-name="ovirt-mirrorchecker" \
     io.openshift.expose-services="8080:http" \
     io.openshift.tags="builder,mirrorchecker" \
-    io.openshift.s2i.scripts-url="image:///usr/libexec/s2i/"
 
 USER root
 RUN ["adduser", "mirrorchecker"]
@@ -27,3 +26,5 @@ RUN ["chown", "-R", "mirrorchecker:mirrorchecker", "/mirrorchecker"]
 
 USER mirrorchecker
 CMD ["scl", "enable", "rh-python35", "mirror_checker.py --config_file=/mirrorchecker/mirrors.yaml"]
+
+EXPOSE 8080

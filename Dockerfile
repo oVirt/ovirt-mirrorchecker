@@ -11,7 +11,6 @@ LABEL io.k8s.description="ovirt-mirrorchecker" \
     io.openshift.tags="builder,mirrorchecker" 
 
 USER root
-RUN ["adduser", "mirrorchecker"]
 RUN ["mkdir", "/mirrorchecker"]
 COPY ["configs/mirrors.yaml", "/mirrorchecker/"]
 COPY ["configs/mirrors.txt", "/mirrorchecker/"]
@@ -22,7 +21,6 @@ RUN ["scl", "enable", "rh-python35", "pip install git+http://github.com/nvgoldin
 RUN ["scl", "enable", "rh-python35", "pip install cryptography"]
 RUN ["chown", "-R", "mirrorchecker:mirrorchecker", "/mirrorchecker"]
 
-USER mirrorchecker
 CMD ["scl", "enable", "rh-python35", "mirror_checker.py --config_file=/mirrorchecker/mirrors.yaml"]
 
 EXPOSE 8080

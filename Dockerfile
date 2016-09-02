@@ -16,8 +16,6 @@ RUN ["mkdir", "/mirrorchecker"]
 COPY ["configs/mirrors.yaml", "/mirrorchecker/"]
 COPY ["configs/mirrors.txt", "/mirrorchecker/"]
 
-ENV SSH_SECRET_KEY none
-RUN echo "$SSH_SECRET_KEY" > /mirrorchecker/id_rsa
 RUN yum install -y centos-release-scl && yum install -y rh-python35 git
 RUN yum install -y gcc libffi-devel python-devel openssl-devel  && yum clean all
 RUN ["scl", "enable", "rh-python35", "pip install git+http://github.com/nvgoldin/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external"]

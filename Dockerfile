@@ -10,17 +10,21 @@ LABEL io.k8s.description="ovirt-mirrorchecker" \
     io.openshift.expose-services="8080:http" \
     io.openshift.tags="builder,mirrorchecker" 
 
+EXPOSE 8080
 USER root
+
+RUN yum install -y centos-release-scl && yum install -y rh-python35 && \ 
+      yum clean all
+RUN yum install -y gcc libffi-devel python-devel openssl-devel nss_wrapper \
+      gettext && yum clean all
+RUN ["scl", "enable", "rh-python35", "pip install git+http://github.com/nvgoldin/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external"]
+RUN ["scl", "enable", "rh-python35", "pip install cryptography"]
 RUN ["mkdir", "/mirrorchecker"]
 COPY ["configs/mirrors.yaml", "/mirrorchecker/"]
 COPY ["configs/mirrors.txt", "/mirrorchecker/"]
-
-RUN yum install -y centos-release-scl && yum install -y rh-python35 git
-RUN yum install -y gcc libffi-devel python-devel openssl-devel  && yum clean all
-RUN ["scl", "enable", "rh-python35", "pip install git+http://github.com/nvgoldin/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external"]
-RUN ["scl", "enable", "rh-python35", "pip install cryptography"]
-
-EXPOSE 8080
-USER 0
-CMD ["scl", "enable", "rh-python35", "mirror_checker.py --config_file=/mirrorchecker/mirrors.yaml"]
+COPY ["entry_point.sh", "/mirrorchecker/"]
+COPY ["passwd.template", "/mirrorchecker/"]
+RUN  ["chown", "-R", "6060:6060", "/mirrorchecker"]
+USER 6060
+CMD ["/mirrorchecker/entry_point.sh", "scl", "enable", "rh-python35", "mirror_checker.py --config_file=/mirrorchecker/mirrors.yaml"]
 

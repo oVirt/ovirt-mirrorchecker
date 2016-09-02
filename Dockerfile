@@ -20,6 +20,7 @@ RUN yum install -y gcc libffi-devel python-devel openssl-devel  && yum clean all
 RUN ["scl", "enable", "rh-python35", "pip install git+http://github.com/nvgoldin/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external"]
 RUN ["scl", "enable", "rh-python35", "pip install cryptography"]
 
+EXPOSE 8080
+USER 0
 CMD ["scl", "enable", "rh-python35", "mirror_checker.py --config_file=/mirrorchecker/mirrors.yaml"]
 
-EXPOSE 8080

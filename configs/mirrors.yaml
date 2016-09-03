@@ -13,8 +13,7 @@ backends:
     stamp_interval: 60.0
     ts_fname: '.timestamp'
     ssh_args:
-       key_filename: '/mirrorchecker/.ssh/ssh-private-key'
-       hostname: 'resources.ovirt.org'
+       hostname: 'ngoldin@resources.ovirt.org'
        timeout: 3.0
     yum_request: 'yum/mirrorlist-ovirt-{version}-{dist}'
     yum_response: 'ovirt-{version}/rpm/{dist}/'

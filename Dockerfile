@@ -28,4 +28,4 @@ RUN  ["chown", "-R", "6060:6060", "/mirrorchecker"]
 
 USER 6060
 WORKDIR /mirrorchecker
-CMD ["entry_point.sh", "scl", "enable", "rh-python35", "mirror_checker.py --config_file=/mirrorchecker/mirrors.yaml"]
+CMD ["/mirrorchecker/entry_point.sh", "scl", "enable", "rh-python35", "mirror_checker.py --config_file=/mirrorchecker/mirrors.yaml"]

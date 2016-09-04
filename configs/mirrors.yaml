@@ -10,11 +10,13 @@ backends:
       - 'ovirt-master-snapshot'
       - 'ovirt-master-snapshot-static/src/mingw-spice-vdagent'
       - 'ovirt-4.0/src'
+      - 'ovirt-master-snapshot/src/ovirt-engine-dwh'
+      - 'ovirt-4.0-snapshot-static/rpm/el7/repodata'
     stamp_interval: 60.0
     ts_fname: '.timestamp'
     ssh_args:
        hostname: 'resources.ovirt.org'
-       username: 'ngoldin'
+       username: 'mirrorchecker'
        key_filename: '/mirrorchecker/.ssh/ssh-private-key'
        timeout: 3.0
     yum_request: 'yum/mirrorlist-ovirt-{version}-{dist}'

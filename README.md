@@ -1,1 +1,1 @@
-ovirt-mirrorchecker-s2i
+ovirt-mirrorchecker

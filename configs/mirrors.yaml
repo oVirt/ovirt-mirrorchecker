@@ -8,7 +8,6 @@ backends:
     max_stamp: 20
     dirs:
       - 'ovirt-master-snapshot'
-      - 'ovirt-master-snapshot-static/src/mingw-spice-vdagent'
       - 'ovirt-4.0/src'
       - 'ovirt-master-snapshot/src/ovirt-engine-dwh'
       - 'ovirt-4.0-snapshot-static/rpm/el7/repodata'

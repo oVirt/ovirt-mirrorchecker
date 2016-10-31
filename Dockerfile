@@ -8,14 +8,14 @@ MAINTAINER Nadav Goldin
 LABEL io.k8s.description="ovirt-mirrorchecker" \
     io.k8s.display-name="ovirt-mirrorchecker" \
     io.openshift.expose-services="8080:http" \
-    io.openshift.tags="builder,mirrorchecker" 
+    io.openshift.tags="builder,mirrorchecker"
 EXPOSE 8080
 
 USER root
 RUN yum install -y centos-release-scl && yum install -y rh-python35
 RUN yum install -y gcc libffi-devel python-devel openssl-devel nss_wrapper \
       gettext && yum clean all -y
-RUN ["scl", "enable", "rh-python35", "pip install git+http://github.com/nvgoldin/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external"]
+RUN ["scl", "enable", "rh-python35", "pip install  git+http://gerrit.ovirt.org/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external"]
 RUN ["scl", "enable", "rh-python35", "pip install cryptography"]
 RUN ["mkdir", "/mirrorchecker"]
 

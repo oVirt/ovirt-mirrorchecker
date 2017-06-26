@@ -7,10 +7,10 @@ backends:
     remote_path: '/srv/resources/pub'
     max_stamp: 20
     dirs:
-      - 'ovirt-master-snapshot'
-      - 'ovirt-4.0/src'
-      - 'ovirt-master-snapshot/src/ovirt-engine-dwh'
-      - 'ovirt-4.0-snapshot-static/rpm/el7/repodata'
+      - 'ovirt-master-snapshot/rpm'
+      - 'ovirt-4.1/src'
+      - 'ovirt-master-snapshot/src'
+      - 'ovirt-4.1-snapshot-static/rpm/el7/repodata'
     stamp_interval: 60.0
     ts_fname: '.timestamp'
     ssh_args:

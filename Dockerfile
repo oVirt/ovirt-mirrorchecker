@@ -12,11 +12,9 @@ LABEL io.k8s.description="ovirt-mirrorchecker" \
 EXPOSE 8080
 
 USER root
-RUN yum install -y centos-release-scl && yum install -y rh-python35
-RUN yum install -y gcc libffi-devel python-devel openssl-devel nss_wrapper \
-      gettext && yum clean all -y
+RUN yum install -y centos-release-scl && yum install -y rh-python35 libffi-devel \
+      python-devel openssl-devel nss_wrapper gettext gcc && yum clean all -y
 RUN ["scl", "enable", "rh-python35", "pip install  git+http://gerrit.ovirt.org/mirrorchecker.git --no-cache-dir --process-dependency-links --allow-all-external"]
-RUN ["scl", "enable", "rh-python35", "pip install cryptography"]
 RUN ["mkdir", "/mirrorchecker"]
 
 COPY ["configs/mirrors.yaml", "/mirrorchecker/"]

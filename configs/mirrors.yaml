@@ -16,7 +16,7 @@ backends:
     ssh_args:
        hostname: 'resources.ovirt.org'
        username: 'mirrorchecker'
-       key_filename: '/mirrorchecker/.ssh/ssh-private-key'
+       key_filename: '/mirrorchecker/.ssh/ssh-privatekey'
        timeout: 3.0
     yum_request: 'yum/mirrorlist-ovirt-{version}-{dist}'
     yum_response: 'ovirt-{version}/rpm/{dist}/'

@@ -22,4 +22,5 @@ backends:
     yum_response: 'ovirt-{version}/rpm/{dist}/'
     yum_threshold: 43200
     http_prefix: '/mirrors'
+    prometheus_metrics: '/metrics'
     mirrors_file: '/mirrorchecker/mirrors.txt'

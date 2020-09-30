@@ -7,8 +7,7 @@ backends:
     remote_path: '/srv/resources/pub'
     max_stamp: 20
     dirs:
-      - 'ovirt-4.2/src'
-      - 'ovirt-4.2-snapshot-static/src'
+      - 'ovirt-4.4/src'
       - 'ovirt-master-snapshot/src'
       - 'ovirt-master-snapshot-static/src'
     stamp_interval: 60.0

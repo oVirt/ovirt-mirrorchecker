@@ -1,4 +1,4 @@
-url='https://resources.ovirt.org/pub',whitelist=True
+url='http://resources.ovirt.org/pub',whitelist=True
 url='http://mirror.linux.duke.edu/ovirt/pub'
 url='http://mirrors.ibiblio.org/ovirt/pub'
 url='http://mirror.isoc.org.il/pub/ovirt'
@@ -6,9 +6,9 @@ url='http://www.gtlib.gatech.edu/pub/oVirt/pub'
 url='http://ftp.plusline.net/ovirt'
 url='http://mirrors.rit.edu/ovirt/pub'
 url='http://mirror.slu.cz/ovirt'
+url='http://ftp.snt.utwente.nl/pub/software/ovirt'
 url='http://ftp.nluug.nl/os/Linux/virtual/ovirt'
 url='http://ovirt.repo.nfrance.com'
 url='http://mirror.rackspace.com/ovirt'
-url='http://ftp.snt.utwente.nl/pub/software/ovirt'
 url='http://mirror.massclouds.com/ovirt'
 url='http://ovirt.mirror.garr.it'

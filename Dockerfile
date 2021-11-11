@@ -2,7 +2,7 @@
 # Dockerfile for ovirt-mirrorchecker
 ############################################################
 
-FROM openshift/base-centos7
+FROM centos:centos7
 
 MAINTAINER Nadav Goldin
 LABEL io.k8s.description="ovirt-mirrorchecker" \

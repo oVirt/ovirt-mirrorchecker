@@ -1,8 +1,6 @@
 url='http://resources.ovirt.org/pub',whitelist=True
-url='http://mirror.linux.duke.edu/ovirt/pub'
 url='http://mirrors.ibiblio.org/ovirt'
 url='http://mirror.isoc.org.il/pub/ovirt'
-url='http://www.gtlib.gatech.edu/pub/oVirt/pub'
 url='http://ftp.plusline.net/ovirt'
 url='http://mirrors.rit.edu/ovirt'
 url='http://mirror.slu.cz/ovirt'
